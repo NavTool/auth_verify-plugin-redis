@@ -23,21 +23,21 @@ add_library(${PROJECT_NAME} STATIC ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 #libevent 
-target_link_libraries(${EXE_NAME} event_static)
-target_link_libraries(${EXE_NAME} event_core_static)
-target_link_libraries(${EXE_NAME} event_extra_static)
+target_link_libraries(${PROJECT_NAME} event_static)
+target_link_libraries(${PROJECT_NAME} event_core_static)
+target_link_libraries(${PROJECT_NAME} event_extra_static)
 
 
 #hiredis 
 target_link_libraries(${PROJECT_NAME} hiredis)
 
 #nlohmann/json
-include_directories(${EXE_NAME} ${JSON_INCLUDE_PATH})
+include_directories(${PROJECT_NAME} ${JSON_INCLUDE_PATH})
 
 #spdlog
 add_definitions(-DUSE_SPD_LOG)
 # target_link_libraries(${PROJECT_NAME} spdlog)
-include_directories(${EXE_NAME} ${SPDLOG_INCLUDE_PATH})
+include_directories(${PROJECT_NAME} ${SPDLOG_INCLUDE_PATH})
 
 
 
