@@ -23,9 +23,9 @@ add_library(${PROJECT_NAME} STATIC ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 #libevent 
-target_link_libraries(${PROJECT_NAME} event_static)
-target_link_libraries(${PROJECT_NAME} event_core_static)
-target_link_libraries(${PROJECT_NAME} event_extra_static)
+target_link_libraries(${PROJECT_NAME} event)
+target_link_libraries(${PROJECT_NAME} event_core)
+target_link_libraries(${PROJECT_NAME} event_extra)
 
 
 #hiredis 
